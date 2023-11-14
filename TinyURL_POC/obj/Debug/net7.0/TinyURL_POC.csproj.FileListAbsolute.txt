@@ -1,0 +1,15 @@
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/bin/Debug/net7.0/TinyURL_POC
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/bin/Debug/net7.0/TinyURL_POC.deps.json
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/bin/Debug/net7.0/TinyURL_POC.runtimeconfig.json
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/bin/Debug/net7.0/TinyURL_POC.dll
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/bin/Debug/net7.0/TinyURL_POC.pdb
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/TinyURL_POC.csproj.AssemblyReference.cache
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/TinyURL_POC.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/TinyURL_POC.AssemblyInfoInputs.cache
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/TinyURL_POC.AssemblyInfo.cs
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/TinyURL_POC.csproj.CoreCompileInputs.cache
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/TinyURL_POC.dll
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/refint/TinyURL_POC.dll
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/TinyURL_POC.pdb
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/TinyURL_POC.genruntimeconfig.cache
+/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/obj/Debug/net7.0/ref/TinyURL_POC.dll
