@@ -5,7 +5,7 @@ VisualStudioVersion = 25.0.1706.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyURL_POC", "TinyURL_POC\TinyURL_POC.csproj", "{43F44A0B-0806-4308-ADEF-556FBA52F797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tinyURLTests", "tinyURLTests\tinyURLTests.csproj", "{89435316-2B12-45FA-AC71-F80FD5C9A27B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyURLTests", "tinyURLTests\tinyURLTests.csproj", "{89435316-2B12-45FA-AC71-F80FD5C9A27B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
