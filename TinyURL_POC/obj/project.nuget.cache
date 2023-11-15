@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "JWA5Lf2SDNVQmG4AM0jPqclC3vM/Fz2MqA029okOjg5hPWGnNw2a6gPzO3NA23fkqOZhcBVGpgwP0wiym0EM9g==",
+  "dgSpecHash": "KmSeN2yOKn7rp31C4LZHJlW9sXeUtOVwrjotVhA75fW94Hj0gilWQ8i8ph4j04BRsc99742D5PcrUkh1Ovc8XQ==",
   "success": true,
   "projectFilePath": "/Users/ivolu2/Projects/TinyURL_POC/TinyURL_POC/TinyURL_POC.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/ivolu2/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/Users/ivolu2/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

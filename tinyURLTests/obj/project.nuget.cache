@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5eAloKs01708rplVqqsr99LIuAvBLJ9KT9SIDSym1hLfZDZtQah/By4r3V2Fa4XkBEajowLHeqJJ4MjcvllDpA==",
+  "dgSpecHash": "e4jvL6FEJjnx9Nx4qhL7f6yI7M+7VkcJmsZ1P27J1AkUCD1pCU8oy7bcCoalR2bwMd0UcspCorJwb+VM+vT0dg==",
   "success": true,
   "projectFilePath": "/Users/ivolu2/Projects/TinyURL_POC/tinyURLTests/tinyURLTests.csproj",
   "expectedPackageFiles": [
     "/Users/ivolu2/.nuget/packages/coverlet.collector/3.2.0/coverlet.collector.3.2.0.nupkg.sha512",
     "/Users/ivolu2/.nuget/packages/microsoft.codecoverage/17.5.0/microsoft.codecoverage.17.5.0.nupkg.sha512",
+    "/Users/ivolu2/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/Users/ivolu2/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "/Users/ivolu2/.nuget/packages/microsoft.net.test.sdk/17.5.0/microsoft.net.test.sdk.17.5.0.nupkg.sha512",
     "/Users/ivolu2/.nuget/packages/microsoft.testplatform.objectmodel/17.5.0/microsoft.testplatform.objectmodel.17.5.0.nupkg.sha512",
     "/Users/ivolu2/.nuget/packages/microsoft.testplatform.testhost/17.5.0/microsoft.testplatform.testhost.17.5.0.nupkg.sha512",
