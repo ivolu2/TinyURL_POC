@@ -9,7 +9,8 @@ public class tinyURLTests
     public void TestCreateTinyURL()
     {
         //Arrange
-        TinyURLService tinyURLService = new();
+        DefaultTokenGenerator tokenGenerator = new();
+        TinyURLService tinyURLService = new(tokenGenerator);
 
         //Act
         string longURL = "https://www.google.com";
@@ -29,8 +30,11 @@ public class tinyURLTests
     [TestMethod]
     public void TestDeleteTinyURL()
     {
+
         //Arrange
-        TinyURLService tinyURLService = new();
+        DefaultTokenGenerator tokenGenerator = new();
+        TinyURLService tinyURLService = new(tokenGenerator);
+        
 
         //Act
         string longURL = "https://www.google.com";
@@ -48,7 +52,8 @@ public class tinyURLTests
     public void TestGetLongURL()
     {
         //Arrange
-        TinyURLService tinyURLService = new();
+        DefaultTokenGenerator tokenGenerator = new();
+        TinyURLService tinyURLService = new(tokenGenerator);
 
         //Act
         string longURL = "https://www.google.com";
@@ -69,7 +74,8 @@ public class tinyURLTests
     public void TestVisitURL()
     {
         //Arrange
-        TinyURLService tinyURLService = new();
+        DefaultTokenGenerator tokenGenerator = new();
+        TinyURLService tinyURLService = new(tokenGenerator);
 
         //Act
         string longURL = "https://www.google.com";
@@ -86,7 +92,8 @@ public class tinyURLTests
     public void TestGetStats()
     {
         //Arrange
-        TinyURLService tinyURLService = new();
+        DefaultTokenGenerator tokenGenerator = new();
+        TinyURLService tinyURLService = new(tokenGenerator);
 
         //Act
         string longURL = "https://www.google.com";

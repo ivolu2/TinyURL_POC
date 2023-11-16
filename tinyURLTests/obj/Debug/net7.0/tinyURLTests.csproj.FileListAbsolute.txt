@@ -10,6 +10,8 @@
 /Users/ivolu2/Projects/TinyURL_POC/tinyURLTests/bin/Debug/net7.0/tinyURLTests.dll
 /Users/ivolu2/Projects/TinyURL_POC/tinyURLTests/bin/Debug/net7.0/tinyURLTests.pdb
 /Users/ivolu2/Projects/TinyURL_POC/tinyURLTests/bin/Debug/net7.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
+/Users/ivolu2/Projects/TinyURL_POC/tinyURLTests/bin/Debug/net7.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/ivolu2/Projects/TinyURL_POC/tinyURLTests/bin/Debug/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/ivolu2/Projects/TinyURL_POC/tinyURLTests/bin/Debug/net7.0/Microsoft.TestPlatform.CoreUtilities.dll
 /Users/ivolu2/Projects/TinyURL_POC/tinyURLTests/bin/Debug/net7.0/Microsoft.TestPlatform.PlatformAbstractions.dll
 /Users/ivolu2/Projects/TinyURL_POC/tinyURLTests/bin/Debug/net7.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
