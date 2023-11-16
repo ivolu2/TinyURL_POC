@@ -22,23 +22,23 @@ namespace TinyURL_POC
 
 			try
 			{
-				string uniqueKey = _tokenGenerator.GenerateToken();
+                string uniqueKey = _tokenGenerator.GenerateToken();
 
-				//If token is NOT unique, create a new one (Ensuring that token is unique)
-				while (tokens.Contains(uniqueKey))
-				{
-					_tokenGenerator.GenerateToken();
-				}
+                //If token is NOT unique, create a new one (Ensuring that token is unique)
+                while (tokens.Contains(uniqueKey))
+                {
+                    _tokenGenerator.GenerateToken();
+                }
 
-				//Add unique key to tokens list
-				tokens.Add(uniqueKey);
+                //Add unique key to tokens list
+                tokens.Add(uniqueKey);
 
-				//Add new tinyURL to list
-				string tinyUrl = "https://www.tinyurl/" + uniqueKey;
-				tinyURLs.Add(tinyUrl, (longURL, 0));
+                //Add new tinyURL to list
+                string tinyUrl = "https://www.tinyurl/" + uniqueKey;
+                tinyURLs.Add(tinyUrl, (longURL, 0));
 
-				return tinyUrl;
-			}
+                return tinyUrl;
+            }
 			catch(Exception ex)
 			{
 				Console.ForegroundColor = ConsoleColor.Red;
@@ -57,15 +57,15 @@ namespace TinyURL_POC
 				//Grabbing token from tinyURL
 				string token = tinyURL.Substring(20);
 
-				//Checking if token exists in list, delete from list if so
+                //Checking if token exists in list, delete from list if so
                 if (tokens.Contains(token))
                 {
                     tokens.Remove(token);
                 }
 
-				//Removing tinyURL from dictionary
+                //Removing tinyURL from dictionary
                 tinyURLs.Remove(tinyURL);
-			}
+            }
 
 		}
 
@@ -83,7 +83,7 @@ namespace TinyURL_POC
                 {
                     throw new InvalidOperationException($"TinyURL '{tinyURL}' is not associated with a existing domain.");
                 }
-				
+
             }
 			catch(Exception ex)
 			{
@@ -101,15 +101,15 @@ namespace TinyURL_POC
             //Search for tinyURL (key) in dictionary
             if (tinyURLs.ContainsKey(tinyURL)) 
             {
-				//Key is found, return true
-				return true;
+                //Key is found, return true
+                return true;
             }
-			else 
-			{
+            else
+            {
                 return false;
             }
-           
-		}
+
+        }
 
 		public int getStats(string tinyURL)
 		{
@@ -133,7 +133,7 @@ namespace TinyURL_POC
                 Console.WriteLine($"An error occurred while getting stats, the TinyURL: {ex.Message}");
                 Console.ResetColor();
                 return -1;
-			}
+            }
 
 		}
 
@@ -155,7 +155,7 @@ namespace TinyURL_POC
                 }
                 else
                 {
-					throw new InvalidOperationException($"TinyURL '{tinyURL}' does not exist.");
+                    throw new InvalidOperationException($"TinyURL '{tinyURL}' does not exist.");
                 }
             }
 			catch (Exception ex)
