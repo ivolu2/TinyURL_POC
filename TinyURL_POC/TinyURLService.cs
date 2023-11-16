@@ -88,9 +88,9 @@ namespace TinyURL_POC
 			catch(Exception ex)
 			{
 				Console.ForegroundColor = ConsoleColor.Red;
-				Console.WriteLine($"An error occurred while getting stats. the TinyURL: {ex.Message}");
+				Console.WriteLine($"An error occurred while getting URL, the TinyURL: {ex.Message}");
 				Console.ResetColor();
-                return "";
+                return "err";
             }
 
 			
@@ -130,7 +130,7 @@ namespace TinyURL_POC
 			catch (Exception ex)
 			{
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"An error occurred while visiting the TinyURL: {ex.Message}");
+                Console.WriteLine($"An error occurred while getting stats, the TinyURL: {ex.Message}");
                 Console.ResetColor();
                 return -1;
 			}

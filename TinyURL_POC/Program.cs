@@ -6,9 +6,24 @@ using TinyURL_POC.Contracts;
 
 class Program
 {
+    //Function for Invalid URL Format on User Input
+    private static void HandleInvalidUrlFormat()
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("URL provided is in an invalid format.");
+    }
+
+    //Function for Invalid Action on User Input
+    private static void HandleInvalidAction()
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Invalid action selected, please try again");
+    }
+
     static void Main()
     {
 
+        //Dependency Injection for Helper Service and Token Generator
         var serviceProvider = new ServiceCollection()
             .AddTransient<ITokenGenerator, DefaultTokenGenerator>()
             .AddTransient<TinyURLService>()
@@ -43,125 +58,117 @@ class Program
             action = Console.ReadLine();
             action = action.ToLower();
 
-            //Checking if valid action was provided. Searching through List actions to determine if input is valid
-            if (!actions.Contains(action)) //invalid action provided
+            switch (action)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Invalid action selected, please try again");
-                Console.ResetColor();
-                Console.WriteLine("Type 'help' to re-list actions");
-                Console.WriteLine();
-
-            }
-            else //valid action provided
-            {
-                if (action == "help") //help action provided, re-list actions
-                {
+       
+                case "help":
                     Console.WriteLine(action_list);
-                }
-                else if (action == "delete") //delete action
-                {
+                    break;
+
+                case "delete":
                     Console.WriteLine("Deleting...please provide tinyURL to delete: ");
-                    string url = Console.ReadLine();
-                    if (Uri.IsWellFormedUriString(url, UriKind.Absolute)) //Checking if tinyURL is a valid format for Uri
+                    string deleteUrl = Console.ReadLine();
+                    if (Uri.IsWellFormedUriString(deleteUrl, UriKind.Absolute)) //Checking if tinyURL is a valid format for Uri
                     {
-                        tinyURLService.deleteTinyURL(url);
+                        tinyURLService.deleteTinyURL(deleteUrl);
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("Action Completed");
                     }
                     else
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("URL provided is in an invalid format.");
+                        HandleInvalidUrlFormat();
                     }
-                }
-                else if (action == "create") //create action
-                {
+                    break;
+
+                case "create":
                     Console.WriteLine("Creating... please provide URL to shorten:");
-                    string url = Console.ReadLine();
-                    if (Uri.IsWellFormedUriString(url, UriKind.Absolute))//Checking if longURL provided is a valid format for Uri
+                    string createUrl = Console.ReadLine();
+                    if (Uri.IsWellFormedUriString(createUrl, UriKind.Absolute))//Checking if longURL provided is a valid format for Uri
                     {
-                        string tiny = tinyURLService.createTinyURL(url);
+                        string tiny = tinyURLService.createTinyURL(createUrl);
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("tinyURL = " + tiny);
 
                     }
                     else
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("URL provided is in an invalid format.");
-                        Console.ResetColor();
+                        HandleInvalidUrlFormat();
                     }
-                }
-                else if (action == "getlong") //getLong action
-                {
+                    break;
 
+                case "getlong":
                     Console.WriteLine("Getting long url... please provide tinyURL:");
-                    string url = Console.ReadLine();
+                    string getLongUrl = Console.ReadLine();
 
-                    if (Uri.IsWellFormedUriString(url, UriKind.Absolute))//Checking if tinyURL provided is a valid format for Uri
+                    if (Uri.IsWellFormedUriString(getLongUrl, UriKind.Absolute))//Checking if tinyURL provided is a valid format for Uri
                     {
-                        string longURL = tinyURLService.getLongURL(url);
+                        string longURL = tinyURLService.getLongURL(getLongUrl);
 
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(longURL);
+                        if (longURL != "err") //longURL of "err" means exception was thrown in Service
+                        {                            
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine(longURL);
+                        }
                     }
                     else
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("URL provided is in an invalid format.");
+                        HandleInvalidUrlFormat();
 
                     }
+                    break;
 
-                }
-                else if (action == "getstats") //getStats action
-                {
+                case "getstats":
                     Console.WriteLine("Getting stats... please provide tinyURL:");
-                    string url = Console.ReadLine();
-                    int count = tinyURLService.getStats(url);
+                    string getStatsUrl = Console.ReadLine();
+                    int getStatsCount = tinyURLService.getStats(getStatsUrl);
 
-                    if (Uri.IsWellFormedUriString(url, UriKind.Absolute))//Checking if tinyURL provided is a valid format for Uri
+                    if (Uri.IsWellFormedUriString(getStatsUrl, UriKind.Absolute))//Checking if tinyURL provided is a valid format for Uri
                     {
-  
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("Visited Count is: " + count);
-                        
+                        if (getStatsCount != -1) //count of -1 means exception was thrown in Service
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("Visited Count is: " + getStatsCount);
+                        }
+
                     }
                     else
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("URL provided is in an invalid format.");
+                        HandleInvalidUrlFormat();
 
                     }
-                }
-                else if (action == "visit")
-                {
+                    break;
+
+                case "visit":
                     Console.WriteLine("Visiting... please provide tinyURL:");
-                    string url = Console.ReadLine();
-                    int count = tinyURLService.visit(url);
+                    string visitUrl = Console.ReadLine();
+                    int visitCount = tinyURLService.visit(visitUrl);
 
-                    if (Uri.IsWellFormedUriString(url, UriKind.Absolute))//Checking if tinyURL provided is a valid format for Uri
+                    if (Uri.IsWellFormedUriString(visitUrl, UriKind.Absolute))//Checking if tinyURL provided is a valid format for Uri
                     {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("tinyURL has been visited.");
-                        string longURL = tinyURLService.getLongURL(url);
-                        Console.WriteLine("redirected to: " + longURL);
-                        
+                        if (visitCount != -1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("tinyURL has been visited.");
+                            string longURL = tinyURLService.getLongURL(visitUrl);
+                            Console.WriteLine("redirected to: " + longURL);
+                        }
+
                     }
                     else
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("URL provided is in an invalid format.");
+                        HandleInvalidUrlFormat();
 
                     }
+                    break;
 
-                }
-                Console.ResetColor();
-                Console.WriteLine("Please provide another action. Type 'help' to re-list actions");
-                Console.WriteLine("");
-
+                default:
+                    HandleInvalidAction();
+                    break;    
             }
 
+            Console.ResetColor();
+            Console.WriteLine("Please provide another action. Type 'help' to re-list actions");
+            Console.WriteLine("");
 
         }
     }
